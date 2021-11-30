@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E772CEC82756215A0035C02A /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772CEC62756215A0035C02A /* CardCell.swift */; };
+		E772CEC92756215A0035C02A /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E772CEC72756215A0035C02A /* CardCell.xib */; };
 		E7C7938E2756104000A71563 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C7938D2756104000A71563 /* AppDelegate.swift */; };
 		E7C793902756104000A71563 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C7938F2756104000A71563 /* SceneDelegate.swift */; };
 		E7C793922756104000A71563 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C793912756104000A71563 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E772CEC62756215A0035C02A /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		E772CEC72756215A0035C02A /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		E7C7938A2756104000A71563 /* UICollectionView-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UICollectionView-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C7938D2756104000A71563 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7C7938F2756104000A71563 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E772CECA275621800035C02A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E772CEC62756215A0035C02A /* CardCell.swift */,
+				E772CEC72756215A0035C02A /* CardCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E7C793812756104000A71563 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +72,7 @@
 				E7C7938D2756104000A71563 /* AppDelegate.swift */,
 				E7C7938F2756104000A71563 /* SceneDelegate.swift */,
 				E7C793912756104000A71563 /* ViewController.swift */,
+				E772CECA275621800035C02A /* Cell */,
 				E7C793932756104000A71563 /* Main.storyboard */,
 				E7C793962756104100A71563 /* Assets.xcassets */,
 				E7C793982756104100A71563 /* LaunchScreen.storyboard */,
@@ -128,6 +142,7 @@
 				E7C7939A2756104100A71563 /* LaunchScreen.storyboard in Resources */,
 				E7C793972756104100A71563 /* Assets.xcassets in Resources */,
 				E7C793952756104000A71563 /* Main.storyboard in Resources */,
+				E772CEC92756215A0035C02A /* CardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,7 @@
 				E7C793922756104000A71563 /* ViewController.swift in Sources */,
 				E7C7938E2756104000A71563 /* AppDelegate.swift in Sources */,
 				E7C793902756104000A71563 /* SceneDelegate.swift in Sources */,
+				E772CEC82756215A0035C02A /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

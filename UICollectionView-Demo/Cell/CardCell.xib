@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="gTV-IL-0wX" customClass="CardCell" customModule="UICollectionView_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="400"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="400"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7b0-Px-7jJ">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="400"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4j-8C-X1t">
+                                <rect key="frame" x="112" y="170" width="126" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T4j-8C-X1t" firstAttribute="centerY" secondItem="7b0-Px-7jJ" secondAttribute="centerY" id="KwM-aq-fYD"/>
+                            <constraint firstItem="T4j-8C-X1t" firstAttribute="centerX" secondItem="7b0-Px-7jJ" secondAttribute="centerX" id="hSO-0j-Aec"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="7b0-Px-7jJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="D15-0e-AoE"/>
+                <constraint firstAttribute="trailing" secondItem="7b0-Px-7jJ" secondAttribute="trailing" id="E7e-pm-pyP"/>
+                <constraint firstAttribute="bottom" secondItem="7b0-Px-7jJ" secondAttribute="bottom" id="S4a-ee-XWL"/>
+                <constraint firstItem="7b0-Px-7jJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TtM-hd-3xu"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="7b0-Px-7jJ" id="FKh-bb-A3y"/>
+                <outlet property="titleLabel" destination="T4j-8C-X1t" id="nYs-N0-AJW"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="106"/>
+        </collectionViewCell>
+    </objects>
+</document>
