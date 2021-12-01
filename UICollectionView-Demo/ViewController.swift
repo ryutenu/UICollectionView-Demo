@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
     
-    private let total = 4
+    private var cellItemsWidth: CGFloat = 0
+    private let pageCount = 4
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,10 @@ class ViewController: UIViewController {
         
         let cardFlowLayout = UICollectionViewFlowLayout()
         cardFlowLayout.itemSize = CGSize(width: view.bounds.width, height: 400)
-        cardFlowLayout.minimumInteritemSpacing = 0
         cardFlowLayout.minimumLineSpacing = 0
         cardFlowLayout.scrollDirection = .horizontal
+        cardFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
         cardCollectionView.collectionViewLayout = cardFlowLayout
     }
     
@@ -51,19 +53,32 @@ extension ViewController: UICollectionViewDelegate {
 }
 
 extension ViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return total
+        return pageCount * 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = cardCollectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell else {
             return UICollectionViewCell()
         }
-        cell.configureCell(index: indexPath.row)
+        let fixedIndex = indexPath.row % pageCount
+        cell.configureCell(index: fixedIndex)
         return cell
     }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension ViewController: UIScrollViewDelegate {
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if cellItemsWidth == 0 {
+            /// 表示したい要素群のwidthを計算する
+            cellItemsWidth = floor(scrollView.contentSize.width/3)
+        }
+        
+        if (scrollView.contentOffset.x <= 0) || (cellItemsWidth*2 < scrollView.contentOffset.x) {
+            /// スクロールした位置がしきい値を超えたら中央に戻す
+            scrollView.contentOffset.x = cellItemsWidth
+        }
+    }
 }
