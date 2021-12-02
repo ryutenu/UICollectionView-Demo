@@ -15,6 +15,7 @@
 		E7C793952756104000A71563 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C793932756104000A71563 /* Main.storyboard */; };
 		E7C793972756104100A71563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C793962756104100A71563 /* Assets.xcassets */; };
 		E7C7939A2756104100A71563 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C793982756104100A71563 /* LaunchScreen.storyboard */; };
+		E7FFDC0927587BCB00EF104B /* CardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FFDC0827587BCB00EF104B /* CardCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E7C793962756104100A71563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C793992756104100A71563 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7C7939B2756104100A71563 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7FFDC0827587BCB00EF104B /* CardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,13 +43,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E772CECA275621800035C02A /* Cell */ = {
+		E772CECA275621800035C02A /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				E772CEC62756215A0035C02A /* CardCell.swift */,
 				E772CEC72756215A0035C02A /* CardCell.xib */,
 			);
-			path = Cell;
+			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		E7C793812756104000A71563 = {
@@ -72,13 +74,22 @@
 				E7C7938D2756104000A71563 /* AppDelegate.swift */,
 				E7C7938F2756104000A71563 /* SceneDelegate.swift */,
 				E7C793912756104000A71563 /* ViewController.swift */,
-				E772CECA275621800035C02A /* Cell */,
+				E7FFDC0727587B6800EF104B /* CollectionViews */,
+				E772CECA275621800035C02A /* CollectionViewCells */,
 				E7C793932756104000A71563 /* Main.storyboard */,
 				E7C793962756104100A71563 /* Assets.xcassets */,
 				E7C793982756104100A71563 /* LaunchScreen.storyboard */,
 				E7C7939B2756104100A71563 /* Info.plist */,
 			);
 			path = "UICollectionView-Demo";
+			sourceTree = "<group>";
+		};
+		E7FFDC0727587B6800EF104B /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				E7FFDC0827587BCB00EF104B /* CardCollectionView.swift */,
+			);
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7C793922756104000A71563 /* ViewController.swift in Sources */,
+				E7FFDC0927587BCB00EF104B /* CardCollectionView.swift in Sources */,
 				E7C7938E2756104000A71563 /* AppDelegate.swift in Sources */,
 				E7C793902756104000A71563 /* SceneDelegate.swift in Sources */,
 				E772CEC82756215A0035C02A /* CardCell.swift in Sources */,

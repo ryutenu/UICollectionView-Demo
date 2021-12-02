@@ -114,34 +114,27 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gBG-pG-yKY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM7-cq-K9X">
                                 <rect key="frame" x="0.0" y="344" width="375" height="434"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7dT-KF-iIn">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gBG-pG-yKY" secondAttribute="bottom" id="1EF-Cp-xDg"/>
-                            <constraint firstItem="gBG-pG-yKY" firstAttribute="top" secondItem="LLd-1d-rJt" secondAttribute="bottom" constant="50" id="7wR-pL-klA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kM7-cq-K9X" secondAttribute="trailing" id="0ei-Lx-K3Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LLd-1d-rJt" secondAttribute="trailing" id="8BY-BC-bwW"/>
                             <constraint firstItem="uPy-R4-3j6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Bsp-2f-ZSE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gBG-pG-yKY" secondAttribute="trailing" id="I4F-B0-nFg"/>
                             <constraint firstItem="LLd-1d-rJt" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="bottom" constant="50" id="LUE-9P-NKy"/>
                             <constraint firstItem="LLd-1d-rJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bAW-0z-wsE"/>
                             <constraint firstItem="uPy-R4-3j6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifq-0C-P6i"/>
-                            <constraint firstItem="gBG-pG-yKY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qJf-Aj-wWA"/>
+                            <constraint firstItem="kM7-cq-K9X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iwA-SI-Sm9"/>
+                            <constraint firstItem="kM7-cq-K9X" firstAttribute="top" secondItem="LLd-1d-rJt" secondAttribute="bottom" constant="50" id="kkJ-7c-1Kc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kM7-cq-K9X" secondAttribute="bottom" id="mI4-8O-PPM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="cardCollectionView" destination="gBG-pG-yKY" id="Dni-3Z-exi"/>
+                        <outlet property="cardView" destination="kM7-cq-K9X" id="989-RY-uav"/>
                         <outlet property="titleCollectionView" destination="LLd-1d-rJt" id="5gR-sT-EJ7"/>
                     </connections>
                 </viewController>
