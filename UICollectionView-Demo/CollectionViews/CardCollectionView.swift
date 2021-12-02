@@ -25,7 +25,7 @@ class CardCollectionView: UICollectionView {
     }
     
     convenience init(frame: CGRect) {
-        let layout = UICollectionViewFlowLayout()
+        let layout = CardFlowLayout()
         layout.itemSize = CGSize(width: frame.width * 0.8, height: frame.height)
         layout.minimumLineSpacing = 20
         layout.scrollDirection = .horizontal
