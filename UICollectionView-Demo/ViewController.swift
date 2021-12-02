@@ -21,22 +21,18 @@ class ViewController: UIViewController {
         setupCardView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        /// 初期位置を真ん中にする
-        cardCollectionView?.scrollToFirstItem()
-    }
-    
     @IBAction func actionButtonTapped(_ sender: UIButton) {
-        print(sender.tag)
+        cardCollectionView?.scrollToTargetItem(index: sender.tag)
     }
     
     private func setupCardView() {
         let width = cardView.frame.width
         let height = cardView.frame.height
         
-        let cardCollectionView = CardCollectionView(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        self.cardCollectionView = cardCollectionView
+        cardCollectionView = CardCollectionView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        guard let cardCollectionView = cardCollectionView else { return }
         cardView.addSubview(cardCollectionView)
+        
+        cardCollectionView.scrollToFirstItem()
     }
 }

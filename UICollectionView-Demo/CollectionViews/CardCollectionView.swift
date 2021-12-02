@@ -11,7 +11,7 @@ class CardCollectionView: UICollectionView {
     
     private let cellIdentifier = "CardCell"
     private let pageCount = 4
-    private var cellItemsWidth: CGFloat = 0
+    private var singleScrollWidth: CGFloat = 0
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -21,6 +21,11 @@ class CardCollectionView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         delegate = self
         dataSource = self
+        
+        backgroundColor = .clear
+        decelerationRate = .fast
+        showsHorizontalScrollIndicator = false
+        
         register(UINib(nibName: cellIdentifier, bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
     }
     
@@ -32,10 +37,6 @@ class CardCollectionView: UICollectionView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         self.init(frame: frame, collectionViewLayout: layout)
-        
-        backgroundColor = .clear
-        decelerationRate = .fast
-        showsHorizontalScrollIndicator = false
     }
     
     /// 初期からスケールを適用する
@@ -52,6 +53,15 @@ class CardCollectionView: UICollectionView {
     func scrollToFirstItem() {
         self.layoutIfNeeded()
         scrollToItem(at: IndexPath(row: pageCount, section: 0), at: .centeredHorizontally, animated: false)
+    }
+    
+    /// 目標位置に移動する
+    func scrollToTargetItem(index: Int) {
+        if let visibleIndexPath = indexPathForItem(at: CGPoint(x: bounds.midX, y: bounds.midY)), (visibleIndexPath.row % pageCount) == (index % pageCount) {
+            return
+        } else {
+            scrollToItem(at: IndexPath(row: pageCount + index, section: 0), at: .centeredHorizontally, animated: true)
+        }
     }
     
     /// 計算してスケールを変更する
@@ -94,21 +104,31 @@ extension CardCollectionView: UICollectionViewDataSource {
 }
 
 extension CardCollectionView: UIScrollViewDelegate {
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         /// 表示したい要素群のwidthを計算する
-        if cellItemsWidth == 0 {
-            cellItemsWidth = floor(scrollView.contentSize.width/3)
+        if singleScrollWidth == 0 {
+            singleScrollWidth = floor(scrollView.contentSize.width/3)
         }
         
         /// スクロールした位置がしきい値を超えたら中央に戻す
-        if (scrollView.contentOffset.x <= 0) || (cellItemsWidth*2 < scrollView.contentOffset.x) {
-            scrollView.contentOffset.x = cellItemsWidth
+        if (scrollView.contentOffset.x <= 0) || (singleScrollWidth*2 < scrollView.contentOffset.x) {
+            scrollView.contentOffset.x = singleScrollWidth
         }
         
         /// 画面内に表示されているcellを取得する
         let cells = visibleCells
         for cell in cells {
             transformScale(cell: cell)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        /// Cellが真ん中に戻れない時、強制的に真ん中に戻す
+        if let visibleIndexPath = indexPathForItem(at: CGPoint(x: bounds.midX, y: bounds.midY)) {
+            scrollToItem(at: IndexPath(row: visibleIndexPath.row, section: 0), at: .centeredHorizontally, animated: true)
+        } else {
+            scrollToFirstItem()
         }
     }
 }
