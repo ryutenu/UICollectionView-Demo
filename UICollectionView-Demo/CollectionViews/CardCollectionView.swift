@@ -38,6 +38,7 @@ class CardCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
     }
     
+    /// 初期からスケールを適用する
     override func layoutSubviews() {
         super.layoutSubviews()
         /// 画面内に表示されているcellを取得する
@@ -45,6 +46,12 @@ class CardCollectionView: UICollectionView {
         for cell in cells {
             transformScale(cell: cell)
         }
+    }
+    
+    /// 初期位置を真ん中にする
+    func scrollToFirstItem() {
+        self.layoutIfNeeded()
+        scrollToItem(at: IndexPath(row: pageCount, section: 0), at: .centeredHorizontally, animated: false)
     }
     
     /// 計算してスケールを変更する

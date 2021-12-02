@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        cardCollectionView?.scrollToItem(at: IndexPath(row: 4, section: 0), at: .centeredHorizontally, animated: false)
+        /// 初期位置を真ん中にする
+        cardCollectionView?.scrollToFirstItem()
     }
     
     @IBAction func actionButtonTapped(_ sender: UIButton) {
