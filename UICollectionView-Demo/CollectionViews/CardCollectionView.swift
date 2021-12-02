@@ -35,7 +35,25 @@ class CardCollectionView: UICollectionView {
         
         backgroundColor = .clear
         decelerationRate = .fast
-//        showsHorizontalScrollIndicator = false
+        showsHorizontalScrollIndicator = false
+    }
+    
+    /// 計算してスケールを変更する
+    private func transformScale(cell: UICollectionViewCell) {
+        /// 最大スケール
+        let maxScale: CGFloat = 1
+        /// 縮小率
+        let reductionRatio: CGFloat = -0.00025
+        /// 画面の中心座標x
+        let screenCenterX = UIScreen.main.bounds.width / 2
+        /// Cellの中心座標x（nilにするとスクリーン上での座標を取得する）
+        let cellCenterX = convert(cell.center, to: nil).x
+        /// 画面の中心からcellの中心までの距離
+        let centerDisX = abs(screenCenterX - cellCenterX)
+        /// スケールy
+        let scaleY = maxScale + reductionRatio * centerDisX
+        /// 新しいスケールで実行する
+        cell.transform = CGAffineTransform(scaleX: maxScale, y: scaleY)
     }
 }
 
@@ -61,14 +79,20 @@ extension CardCollectionView: UICollectionViewDataSource {
 
 extension CardCollectionView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        /// 表示したい要素群のwidthを計算する
         if cellItemsWidth == 0 {
-            /// 表示したい要素群のwidthを計算する
             cellItemsWidth = floor(scrollView.contentSize.width/3)
         }
         
+        /// スクロールした位置がしきい値を超えたら中央に戻す
         if (scrollView.contentOffset.x <= 0) || (cellItemsWidth*2 < scrollView.contentOffset.x) {
-            /// スクロールした位置がしきい値を超えたら中央に戻す
             scrollView.contentOffset.x = cellItemsWidth
+        }
+        
+        /// 画面内に表示されているcellを取得する
+        let cells = visibleCells
+        for cell in cells {
+            transformScale(cell: cell)
         }
     }
 }
