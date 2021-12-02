@@ -38,6 +38,15 @@ class CardCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        /// 画面内に表示されているcellを取得する
+        let cells = visibleCells
+        for cell in cells {
+            transformScale(cell: cell)
+        }
+    }
+    
     /// 計算してスケールを変更する
     private func transformScale(cell: UICollectionViewCell) {
         /// 最大スケール
