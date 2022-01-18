@@ -10,7 +10,7 @@ import UIKit
 class CardCollectionView: UICollectionView {
     
     private let cellIdentifier = "CardCell"
-    private let pageCount = 4
+    private let pageCount = 6
     private var singleScrollWidth: CGFloat = 0
     
     required init?(coder aDecoder: NSCoder) {
@@ -80,6 +80,8 @@ class CardCollectionView: UICollectionView {
         let scaleY = maxScale + reductionRatio * centerDisX
         /// 新しいスケールで実行する
         cell.transform = CGAffineTransform(scaleX: maxScale, y: scaleY)
+        /// Cellの順番を決める
+        cell.layer.zPosition = 1 - abs(centerDisX)
     }
 }
 
@@ -110,16 +112,9 @@ extension CardCollectionView: UIScrollViewDelegate {
         if singleScrollWidth == 0 {
             singleScrollWidth = floor(scrollView.contentSize.width/3)
         }
-        
         /// スクロールした位置がしきい値を超えたら中央に戻す
         if (scrollView.contentOffset.x <= 0) || (singleScrollWidth*2 < scrollView.contentOffset.x) {
             scrollView.contentOffset.x = singleScrollWidth
-        }
-        
-        /// 画面内に表示されているcellを取得する
-        let cells = visibleCells
-        for cell in cells {
-            transformScale(cell: cell)
         }
     }
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-R4-3j6">
-                                <rect key="frame" x="87.666666666666686" y="94" width="200" height="100"/>
+                                <rect key="frame" x="87.666666666666686" y="69" width="200" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG5-9Z-40B">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
@@ -76,19 +76,54 @@
                                             <action selector="actionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QKg-d5-yPf"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSF-Lo-lzi">
+                                        <rect key="frame" x="0.0" y="100" width="100" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="C0K-Ee-e2U"/>
+                                            <constraint firstAttribute="height" constant="50" id="ciE-q7-VxY"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button4"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cLj-0B-GHl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEB-mf-y0V">
+                                        <rect key="frame" x="100" y="100" width="100" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="mt4-9a-2Ig"/>
+                                            <constraint firstAttribute="width" constant="100" id="rs8-ph-BLS"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button5"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gb1-xM-kd2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="QJA-LR-0vG" secondAttribute="bottom" id="2ly-Ug-G2h"/>
                                     <constraint firstItem="VQl-vw-RK4" firstAttribute="leading" secondItem="QJA-LR-0vG" secondAttribute="trailing" id="3kj-Nd-qrL"/>
                                     <constraint firstItem="QJA-LR-0vG" firstAttribute="leading" secondItem="uPy-R4-3j6" secondAttribute="leading" id="4ho-KM-ToX"/>
+                                    <constraint firstItem="VQl-vw-RK4" firstAttribute="top" secondItem="nj1-GK-HNl" secondAttribute="bottom" id="5DD-Oc-uiv"/>
+                                    <constraint firstItem="iSF-Lo-lzi" firstAttribute="leading" secondItem="uPy-R4-3j6" secondAttribute="leading" id="6ES-hw-jhs"/>
+                                    <constraint firstItem="JEB-mf-y0V" firstAttribute="leading" secondItem="iSF-Lo-lzi" secondAttribute="trailing" id="EG4-lL-VdB"/>
                                     <constraint firstItem="LG5-9Z-40B" firstAttribute="leading" secondItem="uPy-R4-3j6" secondAttribute="leading" id="GFf-Xv-Xq0"/>
-                                    <constraint firstAttribute="bottom" secondItem="VQl-vw-RK4" secondAttribute="bottom" id="Uyg-Xe-tMy"/>
+                                    <constraint firstAttribute="bottom" secondItem="JEB-mf-y0V" secondAttribute="bottom" id="MnB-LH-a4E"/>
                                     <constraint firstItem="nj1-GK-HNl" firstAttribute="leading" secondItem="LG5-9Z-40B" secondAttribute="trailing" id="WUW-SF-ywS"/>
+                                    <constraint firstItem="QJA-LR-0vG" firstAttribute="top" secondItem="LG5-9Z-40B" secondAttribute="bottom" id="Z8N-IG-XHQ"/>
                                     <constraint firstItem="nj1-GK-HNl" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="top" id="ZIm-K3-FbJ"/>
                                     <constraint firstItem="LG5-9Z-40B" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="top" id="a6z-iE-GJW"/>
                                     <constraint firstAttribute="trailing" secondItem="VQl-vw-RK4" secondAttribute="trailing" id="fdt-CO-yak"/>
+                                    <constraint firstItem="iSF-Lo-lzi" firstAttribute="top" secondItem="QJA-LR-0vG" secondAttribute="bottom" id="gP7-1M-0nd"/>
                                     <constraint firstAttribute="trailing" secondItem="nj1-GK-HNl" secondAttribute="trailing" id="mvq-rs-XQ5"/>
-                                    <constraint firstAttribute="height" constant="100" id="oQR-xh-JiC"/>
+                                    <constraint firstAttribute="height" constant="150" id="oQR-xh-JiC"/>
+                                    <constraint firstItem="JEB-mf-y0V" firstAttribute="top" secondItem="VQl-vw-RK4" secondAttribute="bottom" id="tPk-pO-G6J"/>
+                                    <constraint firstAttribute="trailing" secondItem="JEB-mf-y0V" secondAttribute="trailing" id="xli-Sb-4PT"/>
+                                    <constraint firstAttribute="bottom" secondItem="iSF-Lo-lzi" secondAttribute="bottom" id="y9T-Gf-1yl"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LLd-1d-rJt">
@@ -124,8 +159,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kM7-cq-K9X" secondAttribute="trailing" id="0ei-Lx-K3Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LLd-1d-rJt" secondAttribute="trailing" id="8BY-BC-bwW"/>
-                            <constraint firstItem="uPy-R4-3j6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Bsp-2f-ZSE"/>
-                            <constraint firstItem="LLd-1d-rJt" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="bottom" constant="50" id="LUE-9P-NKy"/>
+                            <constraint firstItem="uPy-R4-3j6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Bsp-2f-ZSE"/>
+                            <constraint firstItem="LLd-1d-rJt" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="bottom" constant="25" id="LUE-9P-NKy"/>
                             <constraint firstItem="LLd-1d-rJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bAW-0z-wsE"/>
                             <constraint firstItem="uPy-R4-3j6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifq-0C-P6i"/>
                             <constraint firstItem="kM7-cq-K9X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iwA-SI-Sm9"/>
@@ -150,6 +185,9 @@
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -158,6 +196,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
