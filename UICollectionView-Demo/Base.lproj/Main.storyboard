@@ -17,6 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fz5-HA-iIK">
+                                <rect key="frame" x="10" y="119" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8Wt-PG-Bgx"/>
+                                    <constraint firstAttribute="width" constant="50" id="m7r-bc-Wu2"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="←"/>
+                                <connections>
+                                    <action selector="actionGoLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QYL-8F-Rgk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCe-w8-caE">
+                                <rect key="frame" x="315" y="119" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="7sF-T5-adL"/>
+                                    <constraint firstAttribute="height" constant="50" id="vfG-HJ-t4y"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="→"/>
+                                <connections>
+                                    <action selector="actionGoRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i62-rE-XFk"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uPy-R4-3j6">
                                 <rect key="frame" x="87.666666666666686" y="69" width="200" height="150"/>
                                 <subviews>
@@ -92,7 +120,7 @@
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEB-mf-y0V">
                                         <rect key="frame" x="100" y="100" width="100" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="mt4-9a-2Ig"/>
                                             <constraint firstAttribute="width" constant="100" id="rs8-ph-BLS"/>
@@ -162,10 +190,14 @@
                             <constraint firstItem="uPy-R4-3j6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="Bsp-2f-ZSE"/>
                             <constraint firstItem="LLd-1d-rJt" firstAttribute="top" secondItem="uPy-R4-3j6" secondAttribute="bottom" constant="25" id="LUE-9P-NKy"/>
                             <constraint firstItem="LLd-1d-rJt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bAW-0z-wsE"/>
+                            <constraint firstItem="fz5-HA-iIK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dJs-vS-Eng"/>
+                            <constraint firstItem="MCe-w8-caE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="hNX-rA-5Gl"/>
                             <constraint firstItem="uPy-R4-3j6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ifq-0C-P6i"/>
                             <constraint firstItem="kM7-cq-K9X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iwA-SI-Sm9"/>
                             <constraint firstItem="kM7-cq-K9X" firstAttribute="top" secondItem="LLd-1d-rJt" secondAttribute="bottom" constant="50" id="kkJ-7c-1Kc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kM7-cq-K9X" secondAttribute="bottom" id="mI4-8O-PPM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MCe-w8-caE" secondAttribute="trailing" constant="10" id="slF-Qu-rgE"/>
+                            <constraint firstItem="fz5-HA-iIK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="vrR-oC-HtC"/>
                         </constraints>
                     </view>
                     <connections>
@@ -199,6 +231,9 @@
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

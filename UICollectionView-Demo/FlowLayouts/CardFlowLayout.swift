@@ -8,7 +8,8 @@
 import UIKit
 
 class CardFlowLayout: UICollectionViewFlowLayout {
-    
+    /*
+    // Method 1
     private let screenWidth = UIScreen.main.bounds.width
     private let cellWidth = UIScreen.main.bounds.width * 0.8
     
@@ -39,5 +40,32 @@ class CardFlowLayout: UICollectionViewFlowLayout {
         }
         
         return CGPoint(x: proposedContentOffset.x + offsetAdjustment, y: proposedContentOffset.y)
+    }*/
+    
+    // Method 2
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+        if let collectionViewBounds = self.collectionView?.bounds {
+            let halfWidthOfVC = collectionViewBounds.size.width * 0.5
+            let proposedContentOffsetCenterX = proposedContentOffset.x + halfWidthOfVC
+            if let attributesForVisibleCells = self.layoutAttributesForElements(in: collectionViewBounds) {
+                var candidateAttribute : UICollectionViewLayoutAttributes?
+                for attributes in attributesForVisibleCells {
+                    if let candAttr = candidateAttribute {
+                        let a = attributes.center.x - proposedContentOffsetCenterX
+                        let b = candAttr.center.x - proposedContentOffsetCenterX
+                        if abs(a) < abs(b) {
+                            candidateAttribute = attributes
+                        }
+                    } else {
+                        candidateAttribute = attributes
+                        continue
+                    }
+                }
+                if let candidateAttribute = candidateAttribute {
+                    return CGPoint(x: candidateAttribute.center.x - halfWidthOfVC, y: proposedContentOffset.y)
+                }
+            }
+        }
+        return CGPoint.zero
     }
 }

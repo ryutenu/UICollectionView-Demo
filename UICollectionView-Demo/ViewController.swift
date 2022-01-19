@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         setupCardView()
     }
     
+    @IBAction func actionGoLeft(_ sender: Any) {
+        cardCollectionView?.scrollToLeftItem()
+    }
+    
+    @IBAction func actionGoRight(_ sender: Any) {
+        cardCollectionView?.scrollToRightItem()
+    }
+    
     @IBAction func actionButtonTapped(_ sender: UIButton) {
         cardCollectionView?.scrollToTargetItem(index: sender.tag)
     }

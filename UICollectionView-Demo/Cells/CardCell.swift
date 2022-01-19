@@ -13,7 +13,7 @@ class CardCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    private let colors = [UIColor.systemBlue, UIColor.systemGreen, UIColor.systemOrange, UIColor.systemPink, UIColor.systemTeal, UIColor.systemGray]
+    private let colors = [UIColor.systemBlue, UIColor.systemGreen, UIColor.systemOrange, UIColor.systemPink, UIColor.systemTeal, UIColor.systemYellow]
     
     override func awakeFromNib() {
         super.awakeFromNib()

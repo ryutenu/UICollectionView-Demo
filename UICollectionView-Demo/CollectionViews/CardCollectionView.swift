@@ -49,18 +49,32 @@ class CardCollectionView: UICollectionView {
         }
     }
     
-    /// 初期位置を真ん中にする
+    /// 初期Itemを真ん中のItemにする
     func scrollToFirstItem() {
         self.layoutIfNeeded()
         scrollToItem(at: IndexPath(row: pageCount, section: 0), at: .centeredHorizontally, animated: false)
     }
     
-    /// 目標位置に移動する
+    /// 目標Itemへ移動する
     func scrollToTargetItem(index: Int) {
         if let visibleIndexPath = indexPathForItem(at: CGPoint(x: bounds.midX, y: bounds.midY)), (visibleIndexPath.row % pageCount) == (index % pageCount) {
             return
         } else {
             scrollToItem(at: IndexPath(row: pageCount + index, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    /// 左のItemへ移動する
+    func scrollToLeftItem() {
+        if let visibleIndexPath = indexPathForItem(at: CGPoint(x: bounds.midX, y: bounds.midY)) {
+            scrollToItem(at: IndexPath(row: visibleIndexPath.row - 1, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    /// 右のItemへ移動する
+    func scrollToRightItem() {
+        if let visibleIndexPath = indexPathForItem(at: CGPoint(x: bounds.midX, y: bounds.midY)) {
+            scrollToItem(at: IndexPath(row: visibleIndexPath.row + 1, section: 0), at: .centeredHorizontally, animated: true)
         }
     }
     
@@ -82,6 +96,17 @@ class CardCollectionView: UICollectionView {
         cell.transform = CGAffineTransform(scaleX: maxScale, y: scaleY)
         /// Cellの順番を決める
         cell.layer.zPosition = 1 - abs(centerDisX)
+    }
+    
+    /// Indexの計算
+    private func calculateIndex(_ index: Int) -> Int {
+        if index < 0 {
+            return calculateIndex(index + pageCount * 3)
+        } else if pageCount * 3 <= index {
+            return calculateIndex(index - pageCount * 3)
+        } else {
+            return index
+        }
     }
 }
 
